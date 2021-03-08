@@ -4,7 +4,6 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
     node: true,
   },
   extends: [
@@ -14,6 +13,15 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
+  ],
+  overrides: [
+    {
+      env: { jest: true },
+      files: ['**/*.spec.js'],
+      rules: {
+        'react/display-name': 'off',
+      },
+    },
   ],
   parserOptions: {
     ecmaFeatures: { jsx: true },
