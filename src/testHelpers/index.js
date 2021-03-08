@@ -1,0 +1,1 @@
+export { makeRenderComponent } from './makeRenderComponent';
