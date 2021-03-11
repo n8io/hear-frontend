@@ -1,6 +1,14 @@
 import { makeRenderComponent } from 'testHelpers';
 import { App } from '.';
 
+jest.mock('components/ErrorBoundary', () => ({
+  ErrorBoundary: (props) => <x-error-boundary {...props} />,
+}));
+
+jest.mock('components/Suspense', () => ({
+  Suspense: (props) => <x-suspense {...props} />,
+}));
+
 jest.mock('./GlobalStyles', () => ({
   GlobalStyles: (props) => <x-global-styles {...props} />,
 }));
@@ -20,10 +28,12 @@ const renderComponent = makeRenderComponent({
 describe('<App/>', () => {
   test('renders properly', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
-      <x-providers>
-        <x-global-styles />
-        <x-routes />
-      </x-providers>
+      <x-error-boundary>
+        <x-providers>
+          <x-global-styles />
+          <x-routes />
+        </x-providers>
+      </x-error-boundary>
     `);
   });
 });
