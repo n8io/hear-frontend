@@ -19,6 +19,10 @@ const renderComponent = makeRenderComponent({
 describe('<PageTitle/>', () => {
   test('renders properly', () => {
     expect(renderComponent().container).toMatchInlineSnapshot(`
+      .c0 {
+        font-size: 0.75rem;
+      }
+
       <div>
         <x-react-helmet-async>
           <title>
@@ -26,7 +30,9 @@ describe('<PageTitle/>', () => {
             TITLE
           </title>
         </x-react-helmet-async>
-        <h1>
+        <h1
+          class="c0"
+        >
           TITLE
         </h1>
       </div>
