@@ -1,6 +1,10 @@
 import { makeRenderComponent } from 'testHelpers';
 import { Main } from '.';
 
+jest.mock('components/Suspense', () => ({
+  Suspense: (props) => <x-suspense {...props} />,
+}));
+
 const defaultProps = {
   children: 'CHILDREN',
 };
@@ -20,7 +24,9 @@ describe('<Main/>', () => {
       <main
         class="c0"
       >
-        CHILDREN
+        <x-suspense>
+          CHILDREN
+        </x-suspense>
       </main>
     `);
   });

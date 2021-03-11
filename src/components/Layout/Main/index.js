@@ -1,3 +1,4 @@
+import { Suspense } from 'components/Suspense';
 import { node } from 'prop-types';
 import styled from 'styled-components';
 
@@ -5,7 +6,11 @@ const StyledMain = styled.main`
   margin: 1rem;
 `;
 
-const Main = ({ children }) => <StyledMain>{children}</StyledMain>;
+const Main = ({ children }) => (
+  <StyledMain>
+    <Suspense>{children}</Suspense>
+  </StyledMain>
+);
 
 Main.propTypes = {
   children: node.isRequired,
