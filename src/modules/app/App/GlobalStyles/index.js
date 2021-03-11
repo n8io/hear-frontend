@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
   html,
   body,
   #root {
-    font-family: 'IBM Plex Sans', sans-serif;;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 16px;
     min-height: 100vh;
     min-width: 100vw;
