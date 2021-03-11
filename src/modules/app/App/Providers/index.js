@@ -1,11 +1,14 @@
 import { node } from 'prop-types';
-import { Provider as HelmetProvider } from './Helmet';
-import { Provider as SnoodProvider } from './Snood';
+import { Provider as Helmet } from './Helmet';
+import { Provider as Recoil } from './Recoil';
+import { Provider as Snood } from './Snood';
 
 const Providers = ({ children }) => (
-  <HelmetProvider>
-    <SnoodProvider>{children}</SnoodProvider>
-  </HelmetProvider>
+  <Recoil>
+    <Helmet>
+      <Snood>{children}</Snood>
+    </Helmet>
+  </Recoil>
 );
 
 Providers.propTypes = {

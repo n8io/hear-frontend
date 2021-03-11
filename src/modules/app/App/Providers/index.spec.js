@@ -1,6 +1,10 @@
 import { makeRenderComponent } from 'testHelpers';
 import * as PublicApi from '.';
 
+jest.mock('./Recoil', () => ({
+  Provider: (props) => <x-recoil-provider {...props} />,
+}));
+
 jest.mock('./Helmet', () => ({
   Provider: (props) => <x-helmet-provider {...props} />,
 }));
@@ -25,11 +29,13 @@ describe('the Providers component', () => {
 
   test('renders properly', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
-      <x-helmet-provider>
-        <x-snood-provider>
-          CHILDREN
-        </x-snood-provider>
-      </x-helmet-provider>
+      <x-recoil-provider>
+        <x-helmet-provider>
+          <x-snood-provider>
+            CHILDREN
+          </x-snood-provider>
+        </x-helmet-provider>
+      </x-recoil-provider>
     `);
   });
 });
