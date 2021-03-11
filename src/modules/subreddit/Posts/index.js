@@ -1,4 +1,5 @@
 import { Link } from 'components/Link';
+import { Muted } from 'components/Muted';
 import { PageContent } from 'components/PageContent';
 import { PageTitle } from 'components/PageTitle';
 import { route } from 'constants/route';
@@ -14,9 +15,14 @@ const Posts = () => {
     postId: 'abc123',
   });
 
+  const pageTitle = hydrateRoute(route.SUBREDDIT, { subredditId });
+
   return (
     <PageContent>
-      <PageTitle title={hydrateRoute(route.SUBREDDIT, { subredditId })} />
+      <PageTitle title={pageTitle}>
+        {pageTitle}
+        <Muted>{viewType}</Muted>
+      </PageTitle>
       <Link to={postLink}>{postLink}</Link>
     </PageContent>
   );

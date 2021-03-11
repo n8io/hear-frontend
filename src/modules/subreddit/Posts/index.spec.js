@@ -11,6 +11,10 @@ jest.mock('components/Link', () => ({
   Link: (props) => <x-link {...props} />,
 }));
 
+jest.mock('components/Muted', () => ({
+  Muted: (props) => <x-muted {...props} />,
+}));
+
 jest.mock('components/PageContent', () => ({
   PageContent: (props) => <x-page-content {...props} />,
 }));
@@ -45,7 +49,12 @@ describe('<Posts/>', () => {
       <x-page-content>
         <x-page-title
           title="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"SUBREDDIT_ID\\"})"
-        />
+        >
+          hydrateRoute(/r/:subredditId, {"subredditId":"SUBREDDIT_ID"})
+          <x-muted>
+            VIEW_TYPE
+          </x-muted>
+        </x-page-title>
         <x-link
           to="hydrateRoute(/r/:subredditId/posts/:postId, {\\"subredditId\\":\\"SUBREDDIT_ID\\",\\"viewType\\":\\"VIEW_TYPE\\",\\"postId\\":\\"abc123\\"})"
         >
