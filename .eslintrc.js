@@ -60,6 +60,12 @@ module.exports = {
     'no-multiple-empty-lines': ['warn', { max: 1 }],
     'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'object-shorthand': ['warn', 'always'],
+    'react-hooks/exhaustive-deps': [
+      'warn',
+      {
+        additionalHooks: 'useRecoilCallback',
+      },
+    ],
     'react/jsx-sort-default-props': ['warn'],
     'react/jsx-sort-props': ['warn'],
     'react/react-in-jsx-scope': 'off',
