@@ -13,7 +13,13 @@ const renderComponent = makeRenderComponent({
 describe('<Main/>', () => {
   test('renders properly', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
-      <main>
+      .c0 {
+        margin: 1rem;
+      }
+
+      <main
+        class="c0"
+      >
         CHILDREN
       </main>
     `);
