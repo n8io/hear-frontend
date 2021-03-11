@@ -1,10 +1,10 @@
-import { Page } from 'components/Page';
+import { Providers } from './Providers';
 import { Routes } from './Routes';
 
 const App = () => (
-  <Page>
+  <Providers>
     <Routes />
-  </Page>
+  </Providers>
 );
 
 export { App };

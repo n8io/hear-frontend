@@ -1,8 +1,8 @@
 import { makeRenderComponent } from 'testHelpers';
 import { App } from '.';
 
-jest.mock('components/Page', () => ({
-  Page: (props) => <x-page {...props} />,
+jest.mock('./Providers', () => ({
+  Providers: (props) => <x-providers {...props} />,
 }));
 
 jest.mock('./Routes', () => ({
@@ -16,9 +16,9 @@ const renderComponent = makeRenderComponent({
 describe('<App/>', () => {
   test('renders properly', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
-      <x-page>
+      <x-providers>
         <x-routes />
-      </x-page>
+      </x-providers>
     `);
   });
 });
