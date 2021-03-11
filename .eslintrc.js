@@ -14,6 +14,14 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
+  ignorePatterns: [
+    'coverage/*',
+    'dist/*',
+    'src/index.js',
+    'src/reportWebVitals.js',
+    'src/setupTests.js',
+    'src/testHelpers/*',
+  ],
   overrides: [
     {
       env: { jest: true },
