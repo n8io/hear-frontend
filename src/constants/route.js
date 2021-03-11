@@ -1,6 +1,10 @@
 const route = Object.freeze({
-  SUBREDDIT: '/r/unpopularopinion',
-  SUBREDDIT_POST: '/r/:subreddit/:postId',
+  NOT_FOUND: '/404',
+  ROOT: '/',
+  SUBREDDIT: '/r/:subredditId',
+  SUBREDDIT_POSTS: '/r/:subredditId',
+  SUBREDDIT_POSTS_POST: '/r/:subredditId/posts/:postId',
+  SUBREDDIT_POSTS_VIEW: '/r/:subredditId/:viewType',
 });
 
 export { route };
