@@ -25,6 +25,9 @@ describe('<Logo/>', () => {
         viewBox="0 0 57 18"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <title>
+          Reddit text logo
+        </title>
         <g
           fill="#1c1c1c"
         >
