@@ -32,7 +32,7 @@ describe('<Routing/>', () => {
           path="/r/:subredditId/:viewType"
         />
         <x-rrd-redirect
-          to="/r/:subredditId/new"
+          to="/r/:subredditId/trending"
         />
       </x-rrd-switch>
     `);

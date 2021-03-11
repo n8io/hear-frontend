@@ -7,7 +7,7 @@ const Routing = () => (
   <Switch>
     <Route component={Post} exact path={route.SUBREDDIT_POSTS_POST} />
     <Route component={Posts} exact path={route.SUBREDDIT_POSTS_VIEW} />
-    <Redirect to={`${route.SUBREDDIT_POSTS}/new`} />
+    <Redirect to={`${route.SUBREDDIT_POSTS}/trending`} />
   </Switch>
 );
 
