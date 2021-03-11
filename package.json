@@ -5,6 +5,9 @@
     "email": "n8@n8io.com",
     "url": "https://github.com/n8io/hear-frontend"
   },
+  "engines": {
+    "node": "^14.16"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
