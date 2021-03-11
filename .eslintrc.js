@@ -36,9 +36,11 @@ module.exports = {
     'react-hooks',
     'jest',
     'sort-keys-fix',
+    'better-styled-components',
   ],
   rules: {
     'arrow-body-style': ['warn', 'as-needed'],
+    'better-styled-components/sort-declarations-alphabetically': 2,
     'import-helpers/order-imports': [
       'warn',
       {
