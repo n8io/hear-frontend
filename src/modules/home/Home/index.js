@@ -1,21 +1,22 @@
+import { Link } from 'components/Link';
+import { PageContent } from 'components/PageContent';
 import { PageTitle } from 'components/PageTitle';
 import { route } from 'constants/route';
-import { Link } from 'react-router-dom';
 import { hydrateRoute } from 'utils/hydrateRoute';
 
-const paths = ['meme', 'technology', 'tesla', 'unpopularopinion'];
+const paths = ['unpopularopinion'];
 
 const toLink = (subredditId) => hydrateRoute(route.SUBREDDIT, { subredditId });
 
 const Home = () => (
-  <>
-    <PageTitle title="Subreddits" />
+  <PageContent>
+    <PageTitle title="My Subreddits" />
     {paths.map((subredditId) => (
       <p key={subredditId}>
         <Link to={toLink(subredditId)}>{toLink(subredditId)}</Link>
       </p>
     ))}
-  </>
+  </PageContent>
 );
 
 export { Home };

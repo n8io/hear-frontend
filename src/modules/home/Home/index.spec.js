@@ -6,6 +6,14 @@ jest.mock('react-router-dom', () => ({
   Link: (props) => <x-rrd-link {...props} />,
 }));
 
+jest.mock('components/Link', () => ({
+  Link: (props) => <x-link {...props} />,
+}));
+
+jest.mock('components/PageContent', () => ({
+  PageContent: (props) => <x-page-content {...props} />,
+}));
+
 jest.mock('components/PageTitle', () => ({
   PageTitle: (props) => <x-page-title {...props} />,
 }));
@@ -24,40 +32,19 @@ describe('<Home/>', () => {
   });
 
   test('renders properly', () => {
-    expect(renderComponent().container).toMatchInlineSnapshot(`
-      <div>
+    expect(renderComponent().firstChild).toMatchInlineSnapshot(`
+      <x-page-content>
         <x-page-title
-          title="Subreddits"
+          title="My Subreddits"
         />
         <p>
-          <x-rrd-link
-            to="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"meme\\"})"
-          >
-            hydrateRoute(/r/:subredditId, {"subredditId":"meme"})
-          </x-rrd-link>
-        </p>
-        <p>
-          <x-rrd-link
-            to="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"technology\\"})"
-          >
-            hydrateRoute(/r/:subredditId, {"subredditId":"technology"})
-          </x-rrd-link>
-        </p>
-        <p>
-          <x-rrd-link
-            to="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"tesla\\"})"
-          >
-            hydrateRoute(/r/:subredditId, {"subredditId":"tesla"})
-          </x-rrd-link>
-        </p>
-        <p>
-          <x-rrd-link
+          <x-link
             to="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"unpopularopinion\\"})"
           >
             hydrateRoute(/r/:subredditId, {"subredditId":"unpopularopinion"})
-          </x-rrd-link>
+          </x-link>
         </p>
-      </div>
+      </x-page-content>
     `);
   });
 });
