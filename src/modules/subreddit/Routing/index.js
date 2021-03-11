@@ -6,14 +6,14 @@ const FALLBACK_VIEW_TYPE = 'trending';
 
 const LazyPost = lazy(() =>
   import(
-    /* webpackChunkName: "post`" */
+    /* webpackChunkName: "post" */
     '../Post'
   ).then(({ Post }) => ({ default: Post }))
 );
 
 const LazyPosts = lazy(() =>
   import(
-    /* webpackChunkName: "posts`" */
+    /* webpackChunkName: "posts" */
     '../Posts'
   ).then(({ Posts }) => ({ default: Posts }))
 );
