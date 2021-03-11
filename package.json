@@ -40,8 +40,15 @@
     "stylelint-processor-styled-components": "^1.10.0"
   },
   "scripts": {
-    "format": "eslint --fix && prettier --write ./",
-    "lint": "eslint && prettier --list-different ./ && stylelint './src/**/*.js'",
+    "format": "yarn -s format:js",
+    "format:js": "yarn -s format:js:eslint && yarn -s format:js:prettier",
+    "format:js:eslint": "eslint --fix",
+    "format:js:prettier": "prettier --write ./",
+    "lint": "yarn -s lint:js && yarn -s lint:css",
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:js": "yarn -s lint:js:eslint && yarn -s lint:js:prettier",
+    "lint:js:eslint": "eslint",
+    "lint:js:prettier": "prettier --list-different ./",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
