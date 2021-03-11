@@ -24,10 +24,12 @@ describe('<Routing/>', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
       <x-rrd-switch>
         <x-rrd-route
+          component="[object Object]"
           exact="true"
           path="/r/:subredditId/posts/:postId"
         />
         <x-rrd-route
+          component="[object Object]"
           exact="true"
           path="/r/:subredditId/:viewType"
         />
