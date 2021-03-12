@@ -1,18 +1,19 @@
-import { node } from 'prop-types';
+import { node, oneOf } from 'prop-types';
 import styled from 'styled-components';
 
 const StyledSpan = styled.span`
-  color: var(--color-gray-500, #b1b1b1);
-
-  &:before {
-    content: '/';
-  }
+  ${({ level }) => `color: var(--color-gray-${level}00);`}
 `;
 
-const Muted = ({ children }) => <StyledSpan>{children}</StyledSpan>;
+const Muted = (props) => <StyledSpan {...props} />;
+
+Muted.defaultProps = {
+  level: 3,
+};
 
 Muted.propTypes = {
   children: node.isRequired,
+  level: oneOf([1, 2, 3, 4, 5, 6, 7]),
 };
 
 export { Muted };

@@ -16,11 +16,7 @@ describe('<Muted/>', () => {
   test('renders properly', () => {
     expect(renderComponent().container).toMatchInlineSnapshot(`
       .c0 {
-        color: var(--color-gray-500,#b1b1b1);
-      }
-
-      .c0:before {
-        content: '/';
+        color: var(--color-gray-300);
       }
 
       <div>
