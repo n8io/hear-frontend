@@ -1,3 +1,4 @@
+import { usePost } from 'hooks/usePost';
 import { useParams } from 'react-router-dom';
 import { makeRenderComponent } from 'testHelpers';
 import { hydrateRoute } from 'utils/hydrateRoute';
@@ -6,6 +7,8 @@ import { Post } from '.';
 jest.mock('react-router-dom', () => ({
   useParams: jest.fn(),
 }));
+
+jest.mock('recoil');
 
 jest.mock('components/Link', () => ({
   Link: (props) => <x-link {...props} />,
@@ -18,6 +21,8 @@ jest.mock('components/PageContent', () => ({
 jest.mock('components/PageTitle', () => ({
   PageTitle: (props) => <x-page-title {...props} />,
 }));
+
+jest.mock('hooks/usePost');
 
 jest.mock('utils/hydrateRoute');
 
@@ -35,6 +40,8 @@ describe('<Post/>', () => {
       viewType,
     });
 
+    usePost.mockReturnValue({});
+
     hydrateRoute.mockImplementation(
       (route, params) => `hydrateRoute(${route}, ${JSON.stringify(params)})`
     );
@@ -44,7 +51,7 @@ describe('<Post/>', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
       <x-page-content>
         <x-page-title
-          title="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"SUBREDDIT_ID\\"}) [undefined]"
+          title="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"SUBREDDIT_ID\\"}) - undefined"
         >
           <x-link
             to="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"SUBREDDIT_ID\\"})"
@@ -52,7 +59,6 @@ describe('<Post/>', () => {
             hydrateRoute(/r/:subredditId, {"subredditId":"SUBREDDIT_ID"})
           </x-link>
         </x-page-title>
-        hydrateRoute(/r/:subredditId/posts/:postId, {"subredditId":"SUBREDDIT_ID"})
       </x-page-content>
     `);
   });
