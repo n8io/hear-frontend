@@ -36,17 +36,35 @@ describe('<Header/>', () => {
         column-gap: 0.5rem;
         display: grid;
         grid-template-columns: auto 1fr;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+
+      @media screen and (min-width:64rem) {
+        .c0 {
+          border-radius: 0 0 0.5rem 0.5rem;
+          max-width: 64rem;
+          margin: 0 auto;
+        }
+      }
+
+      @media screen and (min-width:64rem) {
+        .c1 {
+          border-radius: 0 0 0 0.5rem;
+        }
       }
 
       <header
         class="c0"
       >
         <x-rrd-link
-          classname="sc-gsTCUz kQYUyf"
+          classname="sc-dlfnbm eaoZIo"
           to="/"
         >
           <img
             alt="Reddit Snood character"
+            class="c1"
             height="48"
             src="SNOOD_URL"
             width="48"

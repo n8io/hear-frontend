@@ -11,6 +11,20 @@ const StyledHeader = styled.header`
   column-gap: 0.5rem;
   display: grid;
   grid-template-columns: auto 1fr;
+  position: sticky;
+  top: 0;
+
+  @media screen and (min-width: 64rem) {
+    border-radius: 0 0 0.5rem 0.5rem;
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+`;
+
+const StyledImg = styled.img`
+  @media screen and (min-width: 64rem) {
+    border-radius: 0 0 0 0.5rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -23,7 +37,12 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledLink to={route.ROOT}>
-        <img alt="Reddit Snood character" height={48} src={snood} width={48} />
+        <StyledImg
+          alt="Reddit Snood character"
+          height={48}
+          src={snood}
+          width={48}
+        />
       </StyledLink>
       <Logo height={24} />
     </StyledHeader>
