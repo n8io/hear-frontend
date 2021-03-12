@@ -21,7 +21,10 @@ const Posts = () => {
     <PageContent>
       <PageTitle title={pageTitle}>
         {pageTitle}
-        <Muted>{viewType}</Muted>
+        <Muted level={5}>
+          {'/'}
+          {viewType}
+        </Muted>
       </PageTitle>
       <Link to={postLink}>{postLink}</Link>
     </PageContent>

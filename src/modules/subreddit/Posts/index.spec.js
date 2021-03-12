@@ -51,7 +51,10 @@ describe('<Posts/>', () => {
           title="hydrateRoute(/r/:subredditId, {\\"subredditId\\":\\"SUBREDDIT_ID\\"})"
         >
           hydrateRoute(/r/:subredditId, {"subredditId":"SUBREDDIT_ID"})
-          <x-muted>
+          <x-muted
+            level="5"
+          >
+            /
             VIEW_TYPE
           </x-muted>
         </x-page-title>
