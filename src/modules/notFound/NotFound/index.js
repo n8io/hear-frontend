@@ -1,12 +1,23 @@
 import { PageTitle } from 'components/PageTitle';
-const { route } = require('constants/route');
-const { Link } = require('react-router-dom');
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
-const NotFound = () => (
-  <>
-    <PageTitle title="Not Found" />
-    <Link to={route.ROOT}>Home</Link>
-  </>
-);
+const NotFound = () => {
+  const history = useHistory();
+
+  const onBackClick = () => history.goBack();
+
+  return (
+    <>
+      <PageTitle title="Not Found" />
+      <br />
+      <p>
+        <Link onClick={onBackClick} to={'#'}>
+          Go Back
+        </Link>
+      </p>
+    </>
+  );
+};
 
 export { NotFound };

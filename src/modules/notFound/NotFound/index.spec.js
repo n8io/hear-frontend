@@ -20,11 +20,14 @@ describe('<NotFound/>', () => {
         <x-page-title
           title="Not Found"
         />
-        <x-rrd-link
-          to="/"
-        >
-          Home
-        </x-rrd-link>
+        <br />
+        <p>
+          <x-rrd-link
+            to="#"
+          >
+            Go Back
+          </x-rrd-link>
+        </p>
       </div>
     `);
   });
