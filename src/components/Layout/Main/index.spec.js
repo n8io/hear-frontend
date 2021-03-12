@@ -21,6 +21,13 @@ describe('<Main/>', () => {
         margin: 1rem;
       }
 
+      @media screen and (min-width:64rem) {
+        .c0 {
+          max-width: 64rem;
+          margin: 1rem auto;
+        }
+      }
+
       <main
         class="c0"
       >
