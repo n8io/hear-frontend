@@ -1,6 +1,6 @@
 import * as PublicApi from '.';
 
-describe('the Helmet provider', () => {
+describe('the Recoil provider', () => {
   test('exports only the allowed exports', () => {
     const allowedExports = ['Provider'];
 
