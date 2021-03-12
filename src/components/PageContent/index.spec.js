@@ -17,7 +17,7 @@ describe('<PageContent/>', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
       .c0 {
         display: grid;
-        row-gap: 1rem;
+        row-gap: 0.5rem;
       }
 
       <div

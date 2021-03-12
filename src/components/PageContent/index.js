@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: grid;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
 `;
 
 const PageContent = ({ children }) => <Container>{children}</Container>;
