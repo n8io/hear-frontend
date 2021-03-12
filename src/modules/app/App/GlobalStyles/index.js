@@ -28,6 +28,10 @@ const GlobalStyles = createGlobalStyle`
   ul,ol {
     list-style: none;
   }
+
+  a {
+    color: var(--color-blue-300);
+  }
 `;
 
 export { GlobalStyles };
