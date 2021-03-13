@@ -26,7 +26,7 @@ describe('<RelativeTimeLink/>', () => {
   test('renders properly', () => {
     expect(renderComponent().firstChild).toMatchInlineSnapshot(`
       <x-rrd-link
-        classname="sc-bdfBwQ bFnbAU sc-gsTCUz gcupIs"
+        classname="sc-bdfBwQ bFnbAU sc-gsTCUz jpBJpl"
         to="/TO"
       >
         <x-relative-time

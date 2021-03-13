@@ -5,6 +5,7 @@ import { RelativeTime } from '../RelativeTime';
 
 const StyledLink = styled(Link)`
   color: var(--color-gray-500);
+  transition: 200ms color ease-in;
 
   &:hover {
     color: inherit;
