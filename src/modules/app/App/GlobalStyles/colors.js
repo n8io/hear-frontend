@@ -11,6 +11,7 @@ const palette = [
   { key: 'gray-700', value: '#5a5a5a' },
   { key: 'black', value: '#000' },
   { key: 'blue-300', value: '#3fa6ef' },
+  { key: 'orange-400', value: '#fca841' },
 ];
 
 const toCssVariable = ({ key, value }) => `--color-${key}: ${value};\n`;
