@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { useQuery } from 'react-query';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { usePost } from '.';
 
 jest.mock('react-query');
@@ -13,6 +13,13 @@ const renderHookCurrent = (hookInitFn) => {
 };
 
 describe('usePost', () => {
+  let setPostComments = null;
+
+  beforeEach(() => {
+    setPostComments = jest.fn();
+    useSetRecoilState.mockReturnValue(setPostComments);
+  });
+
   describe('when initializing', () => {
     let setPost = null;
 
@@ -40,7 +47,7 @@ describe('usePost', () => {
     let data = {};
 
     beforeEach(() => {
-      setPost = jest.fn((obj) => obj);
+      setPost = jest.fn();
       useQuery.mockReturnValue({ data, isError: false, isLoading: false });
       useRecoilState.mockReturnValue([undefined, setPost]);
     });
@@ -49,6 +56,7 @@ describe('usePost', () => {
       renderHookCurrent(() => usePost());
 
       expect(setPost).toHaveBeenCalledWith(data);
+      expect(setPostComments).toHaveBeenCalledWith(data.comments);
     });
   });
 
@@ -57,7 +65,7 @@ describe('usePost', () => {
     let data = {};
 
     beforeEach(() => {
-      setPost = jest.fn((obj) => obj);
+      setPost = jest.fn();
       useQuery.mockReturnValue({ isError: true, isLoading: false });
       useRecoilState.mockReturnValue([data, setPost]);
     });
@@ -66,6 +74,7 @@ describe('usePost', () => {
       renderHookCurrent(() => usePost());
 
       expect(setPost).toHaveBeenCalledWith(null);
+      expect(setPostComments).toHaveBeenCalledWith(null);
     });
   });
 });

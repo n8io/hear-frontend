@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { atoms } from 'store';
 
 const CACHE_KEY = 'post';
@@ -13,15 +13,19 @@ const fetchPost = () => fetch(POST_URL).then((r) => r.json());
 const usePost = () => {
   const { data, isError, isLoading } = useQuery(CACHE_KEY, fetchPost);
   const [post, setPost] = useRecoilState(atoms.POST);
+  const setPostComments = useSetRecoilState(atoms.POST_COMMENTS);
+
   const isValid = !isLoading && !isError;
 
   useEffect(() => {
     if (isValid) {
       setPost(data);
+      setPostComments(data.comments);
     } else {
       setPost(null);
+      setPostComments(null);
     }
-  }, [data, isValid, setPost]);
+  }, [data, isValid, setPost, setPostComments]);
 
   return { isError, isLoading, post };
 };

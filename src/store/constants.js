@@ -1,6 +1,6 @@
 const atomName = Object.freeze({
   POST: 'post',
-  POST_COMMENTS_DELETE: 'post_comments_deleted',
+  POST_COMMENTS: 'postComments',
 });
 
 export { atomName };
