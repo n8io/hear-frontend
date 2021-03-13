@@ -1,4 +1,5 @@
 import { Link } from 'components/Link';
+import { deleted } from 'constants/deleted';
 import { route } from 'constants/route';
 import { string } from 'prop-types';
 import styled from 'styled-components';
@@ -8,10 +9,8 @@ const StyledLink = styled(Link)`
   color: var(--color-blue-300, #3fa6ef);
 `;
 
-const DELETED_AUTHOR = '[deleted]';
-
 const AuthorLink = ({ author }) => {
-  if (author === DELETED_AUTHOR) {
+  if (author === deleted.AUTHOR) {
     return author;
   }
 
