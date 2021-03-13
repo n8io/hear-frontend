@@ -37,3 +37,16 @@ yarn test:ci
 ```shell
 yarn test
 ```
+
+
+## TODOs
+
+- [x] Sort comments asc/desc
+- [ ] Cleanup some responsive display quirks
+- [ ] Leverage a UI library for base theming & low level components
+- [ ] Add expand/collapse functionality to comment threads
+- [ ] I18n
+- [ ] Persist comment deletion to a backend
+- [ ] Persist user settings (comments sort order)
+- [ ] Add a CI/CD pipeline
+- [ ] A boatload of other functionality that I decided to shelve in order to deliver
