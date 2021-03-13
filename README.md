@@ -1,3 +1,5 @@
+![show-n-tell](hear.gif)
+
 # hear-frontend
 
 ## Prerequisites
@@ -37,7 +39,6 @@ yarn test:ci
 ```shell
 yarn test
 ```
-
 
 ## TODOs
 
