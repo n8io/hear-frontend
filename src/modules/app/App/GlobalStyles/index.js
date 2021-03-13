@@ -32,6 +32,18 @@ const GlobalStyles = createGlobalStyle`
   a {
     color: var(--color-blue-300);
   }
+
+  button {
+    place-items: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    transition: 200ms opacity ease-in;
+  }
 `;
 
 export { GlobalStyles };
