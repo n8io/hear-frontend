@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
   grid-template-columns: auto 1fr;
   position: sticky;
   top: 0;
+  z-index: 10;
 
   @media screen and (min-width: 64rem) {
     border-radius: 0 0 0.5rem 0.5rem;

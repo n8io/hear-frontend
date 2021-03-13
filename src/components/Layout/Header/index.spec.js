@@ -39,6 +39,7 @@ describe('<Header/>', () => {
         position: -webkit-sticky;
         position: sticky;
         top: 0;
+        z-index: 10;
       }
 
       @media screen and (min-width:64rem) {
