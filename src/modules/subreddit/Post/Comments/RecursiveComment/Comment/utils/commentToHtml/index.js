@@ -10,13 +10,14 @@ const commentToHtml = (encoded) => {
   const [childNode] = [...el.childNodes];
   let html = childNode?.nodeValue.trim();
 
-  html = html.split('\n').join('<br/>');
   html = html.replace(divRegEx, '');
   html = html.replace(/<\/div>/g, '');
   html = html.replace(pRegEx, '');
   html = html.replace(/<\/p>/g, '');
+  html = html.trim();
+  html = html.split('\n').join('<br/>');
 
-  return html.trim();
+  return html;
 };
 
 export { commentToHtml };
