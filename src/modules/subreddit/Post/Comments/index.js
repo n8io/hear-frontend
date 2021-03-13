@@ -1,5 +1,5 @@
-import { usePost } from 'hooks/usePost';
-import { bool } from 'prop-types';
+import { useRecoilValue } from 'recoil';
+import { atoms } from 'store';
 import styled from 'styled-components';
 import { RecursiveComment } from './RecursiveComment';
 
@@ -10,15 +10,15 @@ const Container = styled.section`
 `;
 
 const sortByCreatedDate = (isAscending) => (a, b) => {
-  const { created_utc: aCreatedUtc = 0 } = a;
-  const { created_utc: bCreatedUtc = 0 } = b;
+  const { created_utc: aCreatedUtc } = a;
+  const { created_utc: bCreatedUtc } = b;
 
-  return isAscending ? bCreatedUtc - aCreatedUtc : aCreatedUtc - bCreatedUtc;
+  return isAscending ? aCreatedUtc - bCreatedUtc : bCreatedUtc - aCreatedUtc;
 };
 
-const Comments = ({ isAscending }) => {
-  const { post } = usePost();
-  const { comments = [] } = post;
+const Comments = () => {
+  const isAscending = useRecoilValue(atoms.POST_COMMENTS_SORT_ORDER_ASC);
+  const comments = useRecoilValue(atoms.POST_COMMENTS);
   const sorted = [...comments].sort(sortByCreatedDate(isAscending));
 
   return (
@@ -35,10 +35,6 @@ const Comments = ({ isAscending }) => {
       )}
     </Container>
   );
-};
-
-Comments.propTypes = {
-  isAscending: bool,
 };
 
 export { Comments };

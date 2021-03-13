@@ -1,6 +1,6 @@
 import { usePost } from 'hooks/usePost';
 import styled from 'styled-components';
-import { CommentsCounter } from './CommentsCounter';
+import { Footer } from './Footer';
 import { OriginalPoster } from './OriginalPoster';
 
 const Container = styled.section`
@@ -15,14 +15,14 @@ const Container = styled.section`
 const Message = () => {
   const { post } = usePost();
 
-  const { selftext: tmpMessage = '' } = post;
+  const { selftext: tmpMessage } = post;
   const message = tmpMessage.replace(/\n/giu, '<br/>');
 
   return (
     <Container title="Original post message">
       <OriginalPoster />
       <div dangerouslySetInnerHTML={{ __html: message }} />
-      <CommentsCounter />
+      <Footer />
     </Container>
   );
 };

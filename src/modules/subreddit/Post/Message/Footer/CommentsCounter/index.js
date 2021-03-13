@@ -14,7 +14,7 @@ const Container = styled.div`
 const CommentsCounter = () => {
   const { post } = usePost();
 
-  const { comments = [] } = post;
+  const { comments } = post;
 
   return (
     <Container>

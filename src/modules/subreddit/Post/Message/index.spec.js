@@ -2,8 +2,8 @@ import { usePost } from 'hooks/usePost';
 import { makeRenderComponent } from 'testHelpers';
 import { Message } from '.';
 
-jest.mock('./CommentsCounter', () => ({
-  CommentsCounter: (props) => <x-comments-counter {...props} />,
+jest.mock('./Footer', () => ({
+  Footer: (props) => <x-footer {...props} />,
 }));
 
 jest.mock('./OriginalPoster', () => ({
@@ -42,7 +42,7 @@ describe('<Message/>', () => {
         <div>
           SELF_TEXT
         </div>
-        <x-comments-counter />
+        <x-footer />
       </section>
     `);
   });
