@@ -59,7 +59,7 @@ I decided to take some liberties with the proposed design that I think improve t
 - Rough in the ability to collapse comment threads
 - Built with responsiveness in mind
 
-## TODOs
+### TODOs
 
 - [x] Sort comments asc/desc
 - [ ] Cleanup some responsive display quirks
