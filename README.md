@@ -40,6 +40,25 @@ yarn test:ci
 yarn test
 ```
 
+## Post Mortem
+
+I decided to take some liberties with the proposed design that I think improve the UX. Normally I'd have a discussion with the design team prior to implementing these changes. 
+
+### Design Liberties
+
+- Co-locate the delete button with the user to make it easier to visually couple the act of deleting a comment with the correct user/comment pair
+- Add a two click confirmation to reduce accidental deletes
+- Add an app-wide header to create a more cohesive user experience
+- Reduce opacity of non-critical elements to improve readability
+
+### Bonus Material
+
+- Add app router to showcase my experience in larger app architecture
+- Add lazy loading to disparate pages/modules
+- Deep linking to post comments and users profiles
+- Rough in the ability to collapse comment threads
+- Built with responsiveness in mind
+
 ## TODOs
 
 - [x] Sort comments asc/desc
